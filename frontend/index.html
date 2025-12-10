@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padel Score Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><i class="fas fa-tennis-ball"></i> Padel Score Tracker</h1>
+      </header>
+
+      <div class="main-content">
+        <!-- Left Panel: Create Match -->
+        <div class="panel left-panel">
+          <h2><i class="fas fa-plus-circle"></i> Create New Match</h2>
+          <div class="form-container">
+            <div class="team-input">
+              <h3>Team 1</h3>
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="team1-player1"
+                  placeholder="Player 1 name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="team1-player2"
+                  placeholder="Player 2 name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="team-input">
+              <h3>Team 2</h3>
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="team2-player1"
+                  placeholder="Player 1 name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="team2-player2"
+                  placeholder="Player 2 name"
+                  required
+                />
+              </div>
+            </div>
+
+            <button id="create-match-btn" class="btn btn-primary">
+              <i class="fas fa-play"></i> Start Match
+            </button>
+          </div>
+        </div>
+
+        <!-- Middle Panel: Current Match -->
+        <div class="panel middle-panel">
+          <h2><i class="fas fa-volleyball-ball"></i> Current Match</h2>
+          <div id="current-match" class="match-display">
+            <div class="no-match">
+              <p>No active match. Create one to get started!</p>
+            </div>
+          </div>
+
+          <div id="score-controls" class="score-controls" style="display: none">
+            <h3>Add Point</h3>
+            <div class="point-buttons">
+              <button id="team1-point" class="btn point-btn team1-btn">
+                <i class="fas fa-plus"></i> Team 1 Point
+              </button>
+              <button id="team2-point" class="btn point-btn team2-btn">
+                <i class="fas fa-plus"></i> Team 2 Point
+              </button>
+            </div>
+            <div class="match-actions">
+              <button id="undo-btn" class="btn btn-secondary">
+                <i class="fas fa-undo"></i> Undo Last Point
+              </button>
+              <button id="end-match-btn" class="btn btn-danger">
+                <i class="fas fa-stop"></i> End Match
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Match History -->
+        <div class="panel right-panel">
+          <h2><i class="fas fa-history"></i> Match History</h2>
+          <div id="match-history" class="history-list">
+            <p class="loading">Loading matches...</p>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>Padel Score Tracker &copy; 2024 | Local Development Version</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
